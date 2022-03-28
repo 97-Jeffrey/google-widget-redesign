@@ -1,14 +1,35 @@
 import React from 'react';
 
+// import bootstrap components:
+import { Card, CardBody } from 'reactstrap';
+
+
+
 interface WidgetProps {
-  title:string;
+  data: {
+    languageName:string, 
+    text:{
+      information: string,
+      command:string
+    }[] 
+  }[];
 }
 
-const Widget:React.FC <WidgetProps> = ({  title }) =>{
+const Widget:React.FC <WidgetProps> = ({ data }) =>{
 
+  console.log(data)
   return (
 
-    <div>{title}</div>
+
+        <Card>
+          <CardBody>
+          <h4 className="card-title">Install The Client Library</h4>
+              <p className="card-title-desc">
+               
+                
+              </p>
+          </CardBody>
+        </Card>
   )
 
 }
