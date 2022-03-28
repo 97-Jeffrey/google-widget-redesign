@@ -1,6 +1,7 @@
 import React from 'react';
 
-// import bootstrap components:
+// import components:
+import Languages from './languages';
 
 //import css file:
 import "./widgets.css";
@@ -25,7 +26,8 @@ const Widget:React.FC <WidgetProps> = ({ data }) =>{
            <div className="text">
              Install Google Library
            </div>
-            
+
+           <Languages languageData={data}/>
          </div>
         </>
   )
