@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 
 // import components:
 import Languages from './languages';
+import SearchBar from './searchBar';
 
 //import css file:
 import "./widgets.css";
+import languageOptions from './data/languageData';
 
 
 interface WidgetProps {
@@ -15,9 +17,13 @@ interface WidgetProps {
       command:string
     }[] 
   }[];
+  languageOptions:{
+    value:string, 
+    label:string
+  }[]
 }
 
-const Widget:React.FC <WidgetProps> = ({ data }) =>{
+const Widget:React.FC <WidgetProps> = ({ data, languageOptions }) =>{
 
   return (
         <>
@@ -28,7 +34,15 @@ const Widget:React.FC <WidgetProps> = ({ data }) =>{
 
            <Languages 
             languageData={data}
-            />
+          />
+
+          <div style={{ marginTop:"30px"}}>
+          <SearchBar 
+            languageOptions={languageOptions}
+          />
+          </div>
+
+          
          </div>
         </>
   )
