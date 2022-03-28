@@ -11,7 +11,7 @@ const widgetData: {
     languageName: "C#",
     text:[
     {
-      information:"For more information, see Setting Up a C# Development Environment,\n If you are using Visual Studio 2017 or higher, open nuget package manager window and type the following:",
+      information:"For more information, see Setting Up a C# Development Environment,\nIf you are using Visual Studio 2017 or higher, open nuget package manager window and type the following:",
       command:"Install-Package Google.Apis"
     },
     {

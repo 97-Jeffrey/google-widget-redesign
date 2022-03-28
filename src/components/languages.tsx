@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 import './languages.css'
 
 // Import components:
-import Language from "./language"
+import Language from "./language";
+import Instruction from './instruction';
 
 interface LanguagesProps{
   languageData:{
@@ -16,13 +17,14 @@ interface LanguagesProps{
   }[];
 } 
 
-
 const Languages:React.FC<LanguagesProps> =({ languageData }) =>{
 
-  const [languageIndex, setLanguageIndex] = useState({});
+  const [languageIndex, setLanguageIndex] = useState(0);
+  const [openInstruction, setOpenInstruction] = useState(false)
 
   const clickWidget = (index:number) =>{
-    setLanguageIndex(index)
+    setLanguageIndex(index);
+    setOpenInstruction(!openInstruction);
   }
 
   return (
@@ -40,6 +42,13 @@ const Languages:React.FC<LanguagesProps> =({ languageData }) =>{
           )
         })}
       </div>
+      {openInstruction 
+        && 
+      <Instruction 
+        isOpen={openInstruction}
+        toggle={()=>setOpenInstruction(!openInstruction)}
+        instructionData = {languageData[languageIndex]}
+      /> }
     </>
   )
 }
