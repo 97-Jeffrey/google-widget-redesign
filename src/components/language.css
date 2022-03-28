@@ -4,6 +4,10 @@
   /* border-radius: 10px; */
   cursor: pointer;
 }
+.active {
+  color: rgb(66, 133, 244);
+  border-bottom: 5px solid rgb(66, 133, 244);
+}
 
 .language:hover {
   /* border: 1.5px solid red; */

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 //import css:
 import './languages.css'
@@ -6,7 +6,7 @@ import './languages.css'
 // Import components:
 import Language from "./language"
 
-interface Languages{
+interface LanguagesProps{
   languageData:{
     languageName:string, 
     text:{
@@ -16,7 +16,14 @@ interface Languages{
   }[];
 } 
 
-const Languages:React.FC<Languages> =({ languageData }) =>{
+
+const Languages:React.FC<LanguagesProps> =({ languageData }) =>{
+
+  const [languageIndex, setLanguageIndex] = useState({});
+
+  const clickWidget = (index:number) =>{
+    setLanguageIndex(index)
+  }
 
   return (
     <>
@@ -24,8 +31,11 @@ const Languages:React.FC<Languages> =({ languageData }) =>{
         {languageData.map((eachData,index)=>{
           return(
             <Language 
-              key={index} 
+              key={index}
+              index = {index}
               language={eachData}
+              languageIndex={languageIndex}
+              onClick={()=>clickWidget(index)}
             />
           )
         })}

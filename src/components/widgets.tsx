@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // import components:
 import Languages from './languages';
@@ -19,7 +19,6 @@ interface WidgetProps {
 
 const Widget:React.FC <WidgetProps> = ({ data }) =>{
 
-  console.log(data)
   return (
         <>
          <div className="widgets">
@@ -27,7 +26,9 @@ const Widget:React.FC <WidgetProps> = ({ data }) =>{
              Install Google Library
            </div>
 
-           <Languages languageData={data}/>
+           <Languages 
+            languageData={data}
+            />
          </div>
         </>
   )
