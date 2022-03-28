@@ -1,8 +1,9 @@
 import React from 'react';
 
 // import bootstrap components:
-import { Card, CardBody } from 'reactstrap';
 
+//import css file:
+import "./widgets.css";
 
 
 interface WidgetProps {
@@ -19,17 +20,14 @@ const Widget:React.FC <WidgetProps> = ({ data }) =>{
 
   console.log(data)
   return (
-
-
-        <Card>
-          <CardBody>
-          <h4 className="card-title">Install The Client Library</h4>
-              <p className="card-title-desc">
-               
-                
-              </p>
-          </CardBody>
-        </Card>
+        <>
+         <div className="widgets">
+           <div className="text">
+             Install Google Library
+           </div>
+            
+         </div>
+        </>
   )
 
 }

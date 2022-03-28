@@ -6,6 +6,7 @@ import Widget from './components/widgets';
 // import Data
 import widgetData from './data';
 
+//import CSS
 import './App.css';
 
 const App:React.FC= () =>{
