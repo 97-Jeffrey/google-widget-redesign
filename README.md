@@ -28,6 +28,8 @@ You will also see any lint errors in the console.
 
 ### The New Snippet:
 
+![google snippet](https://github.com/97-Jeffrey/google-widget-redesign/blob/master/Doc/Screen%20Shot%202022-03-29%20at%202.00.29%20PM.png?raw=true)
+
 1. Has languages present in a section (many rows), which is able to contain more more language options when numbers of language increases.
 
 2. When a language is selected, a modal with complete instruction for installation will appear in cennter of the page, allowing users to focus on the Instruction.
