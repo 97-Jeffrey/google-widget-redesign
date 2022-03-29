@@ -1,16 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 
 //import components:
 import Select from 'react-select';
+import Instruction from './instruction';
 
 interface SearchBarProps{
   languageOptions:{
     value:string, 
     label:string
-  }[]
+  }[];
+  languageData:{ 
+      languageName:string, 
+      text:{
+        information: string,
+        command:string
+      }[] 
+    }[];
 }
 
-const SearchBar:React.FC<SearchBarProps> = ({ languageOptions }) =>{
+const SearchBar:React.FC<SearchBarProps> = ({ languageOptions, languageData }) =>{
+
+  const [languageIndex, setLanguageIndex] = useState(0);
+  const [selectedLanguage, setSelectedLanguage] = useState({value:"", label:""});
+  const [openInstruction, setOpenInstruction] = useState(false);
+
+  const handleSelectLanguage = (selectedgroup:any) =>{
+    setSelectedLanguage(selectedgroup);
+    setLanguageIndex(languageOptions.indexOf(selectedgroup))
+    setOpenInstruction(!openInstruction)
+    setSelectedLanguage({value:"", label:""})
+
+  }
 
   const customStyles = {
     option: (provided:any, state:any) => ({
@@ -20,7 +40,6 @@ const SearchBar:React.FC<SearchBarProps> = ({ languageOptions }) =>{
       padding: 10,
     }),
     control: () => ({
-      // none of react-select's styles are passed to <Control />
       width: 580,
     }),
     singleValue: (provided:any, state:any) => {
@@ -28,8 +47,14 @@ const SearchBar:React.FC<SearchBarProps> = ({ languageOptions }) =>{
       const transition = 'opacity 300ms';
   
       return { ...provided, opacity, transition };
-    }
+    },
+    dropdownIndicator: (provided:any, state:any) => ({
+      ...provided,
+      transform: state.selectProps.menuIsOpen && "rotate(180deg)"
+    })
   }
+
+
   return(
     <>
     <div >
@@ -37,8 +62,16 @@ const SearchBar:React.FC<SearchBarProps> = ({ languageOptions }) =>{
         styles={customStyles}
         placeholder="Or Search/Select A Language"
         options={languageOptions}
+        onChange={(selected)=>handleSelectLanguage(selected)}
       />
     </div>
+    {openInstruction 
+        && 
+      <Instruction 
+        isOpen={openInstruction}
+        toggle={()=>setOpenInstruction(!openInstruction)}
+        instructionData = {languageData[languageIndex]}
+      /> }
     </>
   )
 }

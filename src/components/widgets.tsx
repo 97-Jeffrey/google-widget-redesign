@@ -29,7 +29,7 @@ const Widget:React.FC <WidgetProps> = ({ data, languageOptions }) =>{
         <>
          <div className="widgets">
            <div className="text">
-             Install Google Library
+            Choose A Language <br/>And Install Google Library
            </div>
 
            <Languages 
@@ -39,6 +39,7 @@ const Widget:React.FC <WidgetProps> = ({ data, languageOptions }) =>{
           <div style={{ marginTop:"30px"}}>
           <SearchBar 
             languageOptions={languageOptions}
+            languageData={data}
           />
           </div>
 
