@@ -3,6 +3,8 @@
   min-height: 400px;
   border: 2px solid rgb(196, 194, 194);
   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
 }
 .text {
   margin-top: 10px;

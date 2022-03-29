@@ -4,7 +4,8 @@ import React from 'react';
 import Widget from './components/widgets';
 
 // import Data
-import widgetData from './data';
+import widgetData from './components/data/widgetData';
+import languageOptions from './components/data/languageData';
 
 //import CSS
 import './App.css';
@@ -15,6 +16,7 @@ const App:React.FC= () =>{
       <header className="App-header">
         <Widget  
           data = {widgetData}
+          languageOptions={languageOptions}
         />
       </header>
 

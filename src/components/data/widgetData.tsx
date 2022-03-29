@@ -11,11 +11,25 @@ const widgetData: {
     languageName: "C#",
     text:[
     {
-      information:"For more information, see Setting Up a C# Development Environment,\n If you are using Visual Studio 2017 or higher, open nuget package manager window and type the following:",
+      information:"For more information, see Setting Up a C# Development Environment,\nIf you are using Visual Studio 2017 or higher, open nuget package manager window and type the following:",
       command:"Install-Package Google.Apis"
     },
     {
       information:"If you are using .NET Core command-line interface tools to install your dependencies, run the following command:",
+      command:"dotnet add package Google.Apis"
+
+    }
+  ]
+  },
+  {
+    languageName: "C++",
+    text:[
+    {
+      information:"For more information, see Setting Up a C++ Development Environment,\nIf you are using Visual Studio 2017 or higher, open nuget package manager window and type the following:",
+      command:"Install-Package Google.Apis"
+    },
+    {
+      information:"Run the following command:",
       command:"dotnet add package Google.Apis"
 
     }
@@ -76,6 +90,15 @@ const widgetData: {
   ]
   },
   {
+    languageName: "JavaScript",
+    text:[
+      {
+        information: "For more information, see Setting Up a Backend Node.js Development Environment.",
+        command:"npm install --save @google-cloud/speech"
+      }
+    ]
+  },
+  {
     languageName: "Node.js",
     text:[
       {
@@ -108,6 +131,33 @@ const widgetData: {
       {
         information: "For more information, see Setting Up a Ruby Development Environment.",
         command:"gem install google-api-client"
+      }
+    ]
+  },
+  {
+    languageName: "React",
+    text:[
+      {
+        information: "For more information, see Setting Up a Backend Node.js Development Environment.",
+        command:"npm install --save @google-cloud/speech"
+      }
+    ]
+  },
+  {
+    languageName: "Angular",
+    text:[
+      {
+        information: "For more information, set up a Angular Development Environment.",
+        command:"npm i @angular/google-cloud-speech"
+      }
+    ]
+  },
+  {
+    languageName: "Vue",
+    text:[
+      {
+        information: "For more information, set up a Vue Development Environment.",
+        command:"npm i vue-google-cloud-speech"
       }
     ]
   },

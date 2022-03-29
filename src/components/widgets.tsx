@@ -1,6 +1,8 @@
 import React from 'react';
 
-// import bootstrap components:
+// import components:
+import Languages from './languages';
+import SearchBar from './searchBar';
 
 //import css file:
 import "./widgets.css";
@@ -14,18 +16,33 @@ interface WidgetProps {
       command:string
     }[] 
   }[];
+  languageOptions:{
+    value:string, 
+    label:string
+  }[]
 }
 
-const Widget:React.FC <WidgetProps> = ({ data }) =>{
+const Widget:React.FC <WidgetProps> = ({ data, languageOptions }) =>{
 
-  console.log(data)
   return (
         <>
          <div className="widgets">
            <div className="text">
-             Install Google Library
+            Choose A Language <br/>And Install Google Library
            </div>
-            
+
+           <Languages 
+            languageData={data}
+          />
+
+          <div style={{ marginTop:"30px"}}>
+          <SearchBar 
+            languageOptions={languageOptions}
+            languageData={data}
+          />
+          </div>
+
+          
          </div>
         </>
   )

@@ -1,0 +1,19 @@
+.language {
+  margin: 15px;
+  padding: 7px 5px 1px 5px;
+  /* border-radius: 10px; */
+  cursor: pointer;
+}
+.active {
+  color: rgb(66, 133, 244);
+  border-bottom: 5px solid rgb(66, 133, 244);
+}
+
+.language:hover {
+  /* border: 1.5px solid red; */
+  color: rgb(66, 133, 244);
+  /* text-decoration: underline; */
+  border-bottom: 5px solid rgb(66, 133, 244);
+  /* text-decoration: underline;
+  text-decoration-color: rgb(66, 133, 244); */
+}
