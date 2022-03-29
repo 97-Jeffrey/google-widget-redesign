@@ -13,6 +13,9 @@ const languageOptions:
   { value: 'PHP', label: 'PHP' },
   { value: 'Python', label: 'Python' },
   { value: 'Ruby', label: 'Ruby' },
+  { value: 'React', label: 'React' },
+  { value: 'Angular', label: 'Angular' },
+  { value: 'Vue', label: 'Vue' },
 ]
 
 

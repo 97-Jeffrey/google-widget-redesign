@@ -134,6 +134,33 @@ const widgetData: {
       }
     ]
   },
+  {
+    languageName: "React",
+    text:[
+      {
+        information: "For more information, see Setting Up a Backend Node.js Development Environment.",
+        command:"npm install --save @google-cloud/speech"
+      }
+    ]
+  },
+  {
+    languageName: "Angular",
+    text:[
+      {
+        information: "For more information, set up a Angular Development Environment.",
+        command:"npm i @angular/google-cloud-speech"
+      }
+    ]
+  },
+  {
+    languageName: "Vue",
+    text:[
+      {
+        information: "For more information, set up a Vue Development Environment.",
+        command:"npm i vue-google-cloud-speech"
+      }
+    ]
+  },
 
 ];
 
