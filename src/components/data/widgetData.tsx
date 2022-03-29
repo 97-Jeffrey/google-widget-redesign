@@ -22,6 +22,20 @@ const widgetData: {
   ]
   },
   {
+    languageName: "C++",
+    text:[
+    {
+      information:"For more information, see Setting Up a C++ Development Environment,\nIf you are using Visual Studio 2017 or higher, open nuget package manager window and type the following:",
+      command:"Install-Package Google.Apis"
+    },
+    {
+      information:"Run the following command:",
+      command:"dotnet add package Google.Apis"
+
+    }
+  ]
+  },
+  {
     languageName: "Go",
     text:[
       {
@@ -74,6 +88,15 @@ const widgetData: {
 
     }
   ]
+  },
+  {
+    languageName: "JavaScript",
+    text:[
+      {
+        information: "For more information, see Setting Up a Backend Node.js Development Environment.",
+        command:"npm install --save @google-cloud/speech"
+      }
+    ]
   },
   {
     languageName: "Node.js",

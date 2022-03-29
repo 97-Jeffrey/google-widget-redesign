@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 // import components:
 import Languages from './languages';
@@ -6,7 +6,6 @@ import SearchBar from './searchBar';
 
 //import css file:
 import "./widgets.css";
-import languageOptions from './data/languageData';
 
 
 interface WidgetProps {
