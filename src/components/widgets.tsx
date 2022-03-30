@@ -1,15 +1,15 @@
 import React from 'react';
 
-// import components:
+// Import components:
 import Languages from './languages';
 import SearchBar from './searchBar';
 
-//import css file:
+// Import css file:
 import "./widgets.css";
 
 
 interface WidgetProps {
-  data: {
+  languageData: {
     languageName:string, 
     text:{
       information: string,
@@ -22,32 +22,28 @@ interface WidgetProps {
   }[]
 }
 
-const Widget:React.FC <WidgetProps> = ({ data, languageOptions }) =>{
+const Widget:React.FC <WidgetProps> = ({ languageData, languageOptions }) =>{
 
   return (
         <>
-         <div className="widgets">
-           <div className="text">
-            Choose A Language <br/>And Install Google Library
-           </div>
+          <div className="widgets">
+            <div className="text">
+              Choose A Language <br/>And Install Google Library
+            </div>
+            <Languages 
+              languageData={languageData}
+            />
 
-           <Languages 
-            languageData={data}
-          />
-
-          <div style={{ marginTop:"30px"}}>
-          <SearchBar 
-            languageOptions={languageOptions}
-            languageData={data}
-          />
+            <div className="searchBar">
+              <SearchBar 
+                languageOptions={languageOptions}
+                languageData={languageData}
+              />
+            </div>  
           </div>
-
-          
-         </div>
         </>
-  )
-
-}
+      )
+  }
 
 
 export default Widget;

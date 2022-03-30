@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-//import components:
+//Import components:
 import Select from 'react-select';
 import Instruction from './instruction';
 
@@ -20,16 +20,16 @@ interface SearchBarProps{
 
 const SearchBar:React.FC<SearchBarProps> = ({ languageOptions, languageData }) =>{
 
-  const [languageIndex, setLanguageIndex] = useState(0);
-  const [selectedLanguage, setSelectedLanguage] = useState({value:"", label:""});
-  const [openInstruction, setOpenInstruction] = useState(false);
+  const [languageIndex, setLanguageIndex] = useState<number>(0);
+  const [selectedLanguage, setSelectedLanguage] = 
+  useState<{value:string, label:string}>({value:"", label:""});
 
-  const handleSelectLanguage = (selectedgroup:any) =>{
+  const [openInstruction, setOpenInstruction] = useState<boolean>(false);
+
+  const handleSelectLanguage = (selectedgroup:any):void =>{
     setSelectedLanguage(selectedgroup);
     setLanguageIndex(languageOptions.indexOf(selectedgroup))
     setOpenInstruction(!openInstruction)
-    setSelectedLanguage({value:"", label:""})
-
   }
 
   const customStyles = {
@@ -65,13 +65,15 @@ const SearchBar:React.FC<SearchBarProps> = ({ languageOptions, languageData }) =
         onChange={(selected)=>handleSelectLanguage(selected)}
       />
     </div>
-    {openInstruction 
+    {
+      openInstruction 
         && 
       <Instruction 
         isOpen={openInstruction}
         toggle={()=>setOpenInstruction(!openInstruction)}
         instructionData = {languageData[languageIndex]}
-      /> }
+      /> 
+    }
     </>
   )
 }
