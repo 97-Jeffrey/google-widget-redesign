@@ -1,7 +1,7 @@
 import React from "react";
 
 // Import css:
-import './language.css'
+import '../styling/language.css'
 
 interface LanguageProps{
   language:{

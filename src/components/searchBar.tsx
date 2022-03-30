@@ -4,6 +4,10 @@ import React, { useState } from "react";
 import Select from 'react-select';
 import Instruction from './instruction';
 
+//Import Styling:
+import customStyles from '../styling/styleForSearchbar';
+
+
 interface SearchBarProps{
   languageOptions:{
     value:string, 
@@ -32,48 +36,25 @@ const SearchBar:React.FC<SearchBarProps> = ({ languageOptions, languageData }) =
     setOpenInstruction(!openInstruction)
   }
 
-  const customStyles = {
-    option: (provided:any, state:any) => ({
-      ...provided,
-      borderBottom: '0.5px solid gray',
-      color: state.isSelected ? 'black' : 'rgb(66, 133, 244)',
-      padding: 10,
-    }),
-    control: () => ({
-      width: 580,
-    }),
-    singleValue: (provided:any, state:any) => {
-      const opacity = state.isDisabled ? 0.5 : 1;
-      const transition = 'opacity 300ms';
-  
-      return { ...provided, opacity, transition };
-    },
-    dropdownIndicator: (provided:any, state:any) => ({
-      ...provided,
-      transform: state.selectProps.menuIsOpen && "rotate(180deg)"
-    })
-  }
-
-
   return(
     <>
-    <div >
-      <Select 
-        styles={customStyles}
-        placeholder="Or Search/Select A Language"
-        options={languageOptions}
-        onChange={(selected)=>handleSelectLanguage(selected)}
-      />
-    </div>
-    {
-      openInstruction 
-        && 
-      <Instruction 
-        isOpen={openInstruction}
-        toggle={()=>setOpenInstruction(!openInstruction)}
-        instructionData = {languageData[languageIndex]}
-      /> 
-    }
+      <div>
+        <Select 
+          styles={customStyles}
+          placeholder="Or Search/Select A Language"
+          options={languageOptions}
+          onChange={(selected)=>handleSelectLanguage(selected)}
+        />
+      </div>
+      {
+        openInstruction 
+          && 
+        <Instruction 
+          isOpen={openInstruction}
+          toggle={()=>setOpenInstruction(!openInstruction)}
+          instructionData = {languageData[languageIndex]}
+        /> 
+      }
     </>
   )
 }

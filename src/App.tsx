@@ -4,8 +4,8 @@ import React from 'react';
 import Widget from './components/widgets';
 
 // Import Data
-import widgetData from './components/data/widgetData';
-import languageOptions from './components/data/languageData';
+import widgetData from './data/widgetData';
+import languageOptions from './data/languageData';
 
 //Import CSS
 import './App.css';

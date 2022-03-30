@@ -5,7 +5,7 @@ import Language from "./language";
 import Instruction from './instruction';
 
 //Import css:
-import './languages.css'
+import '../styling/languages.css'
 
 interface LanguagesProps{
   languageData:{
@@ -30,12 +30,12 @@ const Languages:React.FC<LanguagesProps> =({ languageData }) =>{
   return (
     <>
       <div className='languages'>
-        {languageData.map((eachData,index)=>{
+        {languageData.map((eachLanguage,index)=>{
           return(
             <Language 
               key={index}
-              index = {index}
-              language={eachData}
+              index ={index}
+              language={eachLanguage}
               languageIndex={languageIndex}
               onClick={()=>clickWidget(index)}
             />

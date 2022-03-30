@@ -4,7 +4,7 @@ import React from "react";
 import { Modal } from "reactstrap";
 
 //Import css:
-import "./instruction.css"
+import "../styling/instruction.css"
 
 interface InstructionProps {
   isOpen:boolean;
@@ -36,17 +36,17 @@ const Instruction: React.FC<InstructionProps> = ({ isOpen, instructionData, togg
         </h5>
       </div>
       <div className="modal-body">
-        {instructionData.text.map((each, index)=>{
+        {instructionData.text.map((instruction, index)=>{
           return (
             <div 
               key={index}
               className="text" 
             >
               <div className="information">
-                {each.information}
+                {instruction.information}
               </div>
               <div className="command">
-                {each.command}
+                {instruction.command}
               </div>
 
             </div>

@@ -5,7 +5,7 @@ import Languages from './languages';
 import SearchBar from './searchBar';
 
 // Import css file:
-import "./widgets.css";
+import "../styling/widgets.css"
 
 
 interface WidgetProps {
