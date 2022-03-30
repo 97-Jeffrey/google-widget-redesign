@@ -3,7 +3,7 @@ import React from "react";
 //Import components:
 import { Modal } from "reactstrap";
 
-//import css:
+//Import css:
 import "./instruction.css"
 
 interface InstructionProps {
@@ -15,7 +15,7 @@ interface InstructionProps {
       command:string
     }[] 
   };
-  toggle:()=>any,
+  toggle:()=>void,
 }
 
 const Instruction: React.FC<InstructionProps> = ({ isOpen, instructionData, toggle }) =>{
@@ -61,7 +61,6 @@ const Instruction: React.FC<InstructionProps> = ({ isOpen, instructionData, togg
             Close
           </button>
         </div>
-
     </Modal>
     </>
   )

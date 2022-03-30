@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-//import css:
-import './languages.css'
-
 // Import components:
 import Language from "./language";
 import Instruction from './instruction';
+
+//Import css:
+import './languages.css'
 
 interface LanguagesProps{
   languageData:{
@@ -19,10 +19,10 @@ interface LanguagesProps{
 
 const Languages:React.FC<LanguagesProps> =({ languageData }) =>{
 
-  const [languageIndex, setLanguageIndex] = useState(0);
-  const [openInstruction, setOpenInstruction] = useState(false)
+  const [languageIndex, setLanguageIndex] = useState<number>(0);
+  const [openInstruction, setOpenInstruction] = useState<boolean>(false)
 
-  const clickWidget = (index:number) =>{
+  const clickWidget = (index:number):void =>{
     setLanguageIndex(index);
     setOpenInstruction(!openInstruction);
   }

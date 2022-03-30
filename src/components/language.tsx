@@ -1,6 +1,6 @@
 import React from "react";
 
-// import css:
+// Import css:
 import './language.css'
 
 interface LanguageProps{
@@ -13,7 +13,7 @@ interface LanguageProps{
   },
   languageIndex:{},
   index:number,
-  onClick:()=> any
+  onClick:()=> void
 }
 
 const Language: React.FC<LanguageProps>= ({ language, languageIndex, index, onClick }) =>{
